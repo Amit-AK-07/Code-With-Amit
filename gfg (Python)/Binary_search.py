@@ -3,22 +3,21 @@
 class Solution:
     def binarysearch(self, arr, k):
         # Code Here
-        start, end = 0, len(arr) - 1
+        n = len(arr)
+        start = 0
+        end = n - 1
+        ans = -1
         
         while start <= end:
-            mid = start + (end - start) // 2;
+            mid = start + (end - start) // 2
             
-            if arr[mid] < k:
-                start = mid + 1
-                
-            elif arr[mid] == k:
-                if mid == 0 or arr[mid - 1] != k:
-                    return mid
-                    
+            if arr[mid] == k:
+                ans = mid
                 end = mid - 1
-                
+            elif arr[mid] < k:
+                start = mid + 1
             else:
                 end = mid - 1
                 
-        return -1
+        return ans
 
