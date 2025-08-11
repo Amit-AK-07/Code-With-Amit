@@ -1,11 +1,11 @@
 class Solution:
 	def getLPSLength(self, s):
 		# code here
-		l = len(s)
+		n = len(s)
         i = 0
         j = 1
         
-        while j < l:
+        while j < n:
             if s[i] == s[j]:
                 i += 1
                 
